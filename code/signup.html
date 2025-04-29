@@ -305,10 +305,18 @@
       display: block;
     }
 
-    @media (max-width: 500px) {
+   @media (max-width: 500px) { /* Comment: Mobile-specific styles */
       .signup-container {
         width: 90%;
         padding: 30px;
+      }
+
+      .signup-container h2 {
+        font-size: 1.5rem;
+      }
+
+      .signup-container .logo-text {
+        font-size: 1.5rem;
       }
     }
   </style>
@@ -364,8 +372,7 @@
         const email = document.querySelector("#email").value;
         const username = document.querySelector("#username").value;
         const password = document.querySelector("#password").value;
-
-        const errorMessage = document.querySelector("#error-message");
+       const errorDiv = document.querySelector("#error-message");
         errorMessage.textContent = "";
         errorMessage.classList.remove("visible");
 

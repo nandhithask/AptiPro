@@ -3,6 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Onboarding Page</title>
     <style>
      
@@ -17,6 +20,7 @@
             justify-content: center;
             flex-direction: column;
             text-align: center;
+margin: 0;
         }
 
         .get-started-btn {
@@ -39,6 +43,24 @@
         .get-started-btn:hover {
             background-color: #00008B; 
             color: #ffffff; 
+        }
+
+
+ @media screen and (max-width: 768px) {
+            .get-started-btn {
+                padding: 12px 40px; /* smaller padding */
+                font-size: 18px; /* smaller text */
+                margin-top: 200px; /* adjust spacing */
+                margin-left: 0; /* center the button */
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .get-started-btn {
+                width: 80%; /* make button fill most of the screen */
+                padding: 12px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>

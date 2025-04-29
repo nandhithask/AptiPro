@@ -52,7 +52,7 @@ const transporter = nodemailer.createTransport({
  tls: {
     rejectUnauthorized: false, 
   },
- logger: true, // Enable logging
+ logger: true, 
   debug: true,
 });
 
@@ -213,7 +213,7 @@ const resetUrl = `https://aptipro.onrender.com/reset-password.html?token=${reset
 
 
 app.get('/reset-password.html', (req, res) => {
-  res.sendFile(path.join(__dirname, 'reset-password.html')); // Adjust path if the file is elsewhere
+  res.sendFile(path.join(__dirname, 'reset-password.html')); 
 });
 
 
