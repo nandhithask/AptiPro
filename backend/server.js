@@ -5,10 +5,12 @@ const bcrypt = require("bcryptjs");
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken');
 const app = express();
+const cors = require("cors");
+
 const path = require("path");
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-app.use(cors(corsOptions));
+
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -24,7 +26,7 @@ const corsOptions = {
   credentials: true, 
 };
 
-
+app.use(cors(corsOptions));
 
 
 
