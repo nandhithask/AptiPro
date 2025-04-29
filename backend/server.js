@@ -8,7 +8,7 @@ const app = express();
 const path = require("path");
 const crypto = require('crypto');
 const nodemailer = require('nodemailer');
-
+app.use(cors(corsOptions));
 
 const JWT_SECRET = process.env.JWT_SECRET;
 
@@ -24,7 +24,7 @@ const corsOptions = {
   credentials: true, 
 };
 
-app.use(cors(corsOptions));
+
 
 
 
