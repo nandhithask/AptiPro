@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantitative Aptitude Test</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        
+        #topicCarousel {
+            margin: 30px auto;
+            max-width: 1000px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+        }
+        
+        .dropdown-section {
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            margin: 20px 0;
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+        
+        #carouselExampleAutoplaying {
+            margin: 30px auto;
+            max-width: 1000px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+        }
+        
+        .dropdown-section {
+            margin: 30px auto;
+            max-width: 600px;
+            text-align: left;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dropdown-section select {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        .time-display {
+            font-size: 18px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .warning-section {
+            background-color: #fff;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        
+        .warning-title {
+            font-size: 24px;
+            font-weight: bold;
+            color: #d9534f;
+            margin-bottom: 15px;
+        }
+        
+        .warning-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .warning-list li {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        
+        .checkbox-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+        }
+        
+        .test-btn {
+            margin: 40px auto;
+            padding: 12px 30px;
+            font-size: 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        
+        .test-btn:disabled {
+            background-color: #6c757d;
+            cursor: not-allowed;
+        }
+    </style>
+        
+        
+    
+</head>
+<body>
+
+    <h1 id="pageTitle">Test your Aptitude skills</h1>
+
+    <!-- Dynamic Topic Carousel -->
+    <div id="topicCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner" id="carouselInner">
+            <!-- Content will be dynamically inserted based on URL parameter -->
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#topicCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#topicCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Test configuration section -->
+    <div class="dropdown-section">
+        <label for="questionsDropdown">Select Number of Questions:</label>
+        <select id="questionsDropdown" class="form-select">
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="60">60 Questions</option>
+        </select>
+
+        <label for="levelDropdown">Select Level:</label>
+        <select id="levelDropdown" class="form-select">
+            <option value="beginner">Beginner</option>
+            <option value="pro">Pro</option>
+        </select>
+
+        <div id="timeDisplay" class="time-display mt-3">Allocated Time: 0 minutes</div>
+    </div>
+
+    <!-- Rest of your existing content -->
+    <div class="warning-section">
+        <div class="warning-title">⚠ Important Instructions:</div>
+        <ul class="warning-list">
+            <li>1. Ensure that you complete the test within the allocated time.</li>
+            <li>2. Do not refresh the page during the test to avoid losing progress.</li>
+            <li>3. Read each question carefully before answering.</li>
+            <li>4. Once submitted, you cannot reattempt the test.</li>
+            <li>5. Use only the allowed resources to complete the test honestly.</li>
+        </ul>
+
+       
+
+        <div class="checkbox-section">
+            <input type="checkbox" id="agreeCheckbox">
+            <label for="agreeCheckbox">I have read and agree to the above conditions.</label>
+        </div>
+    </div>
+
+    <a href="attend-test.html" id="testLink">
+        <button id="testButton" class="test-btn" disabled>Take the Test</button>
+    </a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Topic-specific images (replace with your actual image paths)
+        const topicImages = {
+            "Profit and Loss": [
+                {src: "profit.svg", alt: "Profit Formulas"},
+                {src: "loss.svg", alt: "Loss Formulas"},
+                
+            ],
+
+            "Percentage": [
+                {src: "basic-percentage.svg", alt: "Basic core  Formulas"},
+                {src: "percentage.svg", alt: "Advanced Formulas"},
+                
+            ],
+
+            
+            "Mixture and Alligation": [
+                {src: "basic-mix.svg", alt: "Basic core Formulas"},
+                {src: "adv-mix.svg", alt: "Advanced  Formulas"},
+                
+            ],
+
+            "Simple and Compound Interest": [
+                {src: "si.svg", alt: "Simple Interest Formulas"},
+                {src: "ci.svg", alt: "Compound Interest Formulas"},
+                
+            ],
+            
+            "Permutation and combination": [
+                {src: "permut-1.svg", alt: "Basic Formulas"},
+                {src: "permut-2.svg", alt: " Special cases and  shortcuts"},
+                {src: "permut-3.svg", alt: "Advanced scenarios Formulas"},
+                
+            ],
+            
+
+            "Time and Work": [
+                {src: "TW-1.svg", alt: "Time and Work"},
+                {src: "TW-2.svg", alt: "Work Efficiency"},
+            ],
+            "Probability": [
+                {src: "prob-basic.svg", alt: "Probability"},
+                {src: "prob-adv.svg", alt: "Dice Probability"},
+            ],
+            "simplification": [
+                {src: "simpli-1.svg", alt: "Simplification"},
+                {src: "simpli-2.svg", alt: "BODMAS Rules"}
+            ],
+            "timespeeddistance": [
+                {src: "tsd-1.svg", alt: "TSD Basics"},
+                {src: "tsd-2.svg", alt: "Relative Speed"}
+            ],
+            "ratioproportion": [
+                {src: "rp-1.svg", alt: "Ratio Proportion"},
+                {src: "rp-2.svg", alt: "Mixture Problems"}
+            ],
+            "Average": [
+                {src: "average-1.svg", alt: "Average"},
+                {src: "average-2.svg", alt: "Weighted Average"}
+            ]
+        };
+
+        // Function to load carousel based on URL parameters
+        function initializePageFromURL() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const topic = urlParams.get('topic');
+            const test = urlParams.get('test');
+            
+            // Update page title if test type is specified
+            if (test) {
+                document.getElementById('pageTitle').textContent = test.charAt(0).toUpperCase() + test.slice(1);
+            }
+            
+            // Load carousel for the specified topic
+            if (topic) {
+                loadTopicCarousel(topic);
+            }
+            
+            // Update test link with existing parameters
+            const testLink = document.getElementById('testLink');
+            const currentHref = new URL(testLink.href);
+            currentHref.searchParams.set('topic', topic || '');
+            currentHref.searchParams.set('test', test || '');
+            testLink.href = currentHref.toString();
+        }
+
+        // Load carousel for specified topic
+        function loadTopicCarousel(topic) {
+            const carouselInner = document.getElementById('carouselInner');
+            carouselInner.innerHTML = '';
+            
+            const images = topicImages[topic] || [];
+            
+            if (images.length === 0) {
+                // Show default if no images for topic
+                const defaultItem = document.createElement('div');
+                defaultItem.className = 'carousel-item active';
+                defaultItem.innerHTML = `<img src="https://via.placeholder.com/1000x450.png?text=${encodeURIComponent(topic)}+Tips" class="d-block w-100" alt="${topic}">`;
+                carouselInner.appendChild(defaultItem);
+            } else {
+                images.forEach((img, index) => {
+                    const item = document.createElement('div');
+                    item.className = `carousel-item ${index === 0 ? 'active' : ''}`;
+                    item.innerHTML = `<img src="${img.src}" class="d-block w-100" alt="${img.alt}">`;
+                    carouselInner.appendChild(item);
+                });
+            }
+            
+            // Initialize carousel
+            new bootstrap.Carousel(document.getElementById('topicCarousel'));
+        }
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set up carousel based on URL parameters
+            initializePageFromURL();
+            
+            // Existing functionality
+            const agreeCheckbox = document.getElementById('agreeCheckbox');
+            const testButton = document.getElementById('testButton');
+            const questionsDropdown = document.getElementById('questionsDropdown');
+            const levelDropdown = document.getElementById('levelDropdown');
+            const timeDisplay = document.getElementById('timeDisplay');
+            
+            agreeCheckbox.addEventListener('change', function() {
+                testButton.disabled = !this.checked;
+            });
+            
+            function calculateTime() {
+                const questionCount = parseInt(questionsDropdown.value);
+                const level = levelDropdown.value;
+                const urlParams = new URLSearchParams(window.location.search);
+                const topic = urlParams.get('topic');
+                const test = urlParams.get('test');
+                
+                let allocatedTime;
+                if (level === 'beginner') {
+                    allocatedTime = questionCount * 2; 
+                } else {
+                    allocatedTime = questionCount; 
+                }
+                
+                timeDisplay.textContent = `Allocated Time: ${allocatedTime} minutes`;
+                
+                // Update test link with all parameters
+                const testLink = document.getElementById('testLink');
+                testLink.href = `attend-test.html?questions=${questionCount}&time=${allocatedTime}&topic=${encodeURIComponent(topic || '')}&test=${encodeURIComponent(test || '')}`;
+            }
+            
+            questionsDropdown.addEventListener('change', calculateTime);
+            levelDropdown.addEventListener('change', calculateTime);
+            calculateTime();
+        });
+    </script>
+</body>
+</html>

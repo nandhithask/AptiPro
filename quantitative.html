@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>AptPro - Quantitative Aptitude</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap">
+    <link rel="stylesheet" href="navstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+        }
+    
+        .avatar {
+            width: 36px;
+            height: 36px;
+            background-color: #5166f6;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        
+        .page-title {
+            color: #333;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .page-subtitle {
+            color: #666;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .search-bar {
+            width: 100%;
+            max-width: 600px;
+            padding: 12px 20px;
+            border-radius: 25px;
+            border: 1px solid #ddd;
+            outline: none;
+            margin: 0 auto 30px;
+            font-size: 16px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            display: block;
+        }
+        
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .topic-card {
+            text-decoration: none;
+        }
+        
+        .topic-box {
+            background-color: #5166f6;
+            color: white;
+            padding: 25px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            font-size: 18px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .topic-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+            background-color: #4055e5;
+        }
+        
+        @media (max-width: 768px) {
+            .topics-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header {
+                padding: 15px;
+            }
+            
+            .logo-text {
+                font-size: 18px;
+            }
+            
+            .page-title {
+                font-size: 24px;
+            }
+            
+            .page-subtitle {
+                font-size: 14px;
+            }
+            
+            .topic-box {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+   <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-brain"></i>
+                AptiPro
+            </a>
+            <div class="user-menu">
+                <span id="usernameDisplay" class="username"></span>
+                <div class="user-icon" onclick="toggleDropdown()">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <a href="profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+                    <a href="login.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+
+    <div class="main-container">
+        <h1 class="page-title">Quantitative Aptitude</h1>
+        <p class="page-subtitle">Test your math skills and improve your quantitative reasoning</p>
+        
+        <input type="text" class="search-bar" id="searchBar" placeholder="Search topics...">
+
+        <div class="topics-grid">
+            <a href="taketest.html?topic=Profit and Loss&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="Profit and loss">
+                    Profit and Loss
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Percentage&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="percentage">
+                    Percentage
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Mixture and Alligation&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="Mixture and Alligation">
+                    Mixture & Alligation
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Simple and Compound Interest&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="Simple and Compound Interest">
+                    Simple & Compound Interest
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Permutation and combination&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="Permutation and Combination">
+                    Permutation & Combination
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Time and Work&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="time and work">
+                    Time and Work
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Probability&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="probability">
+                    Probability
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=simplification&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="simplification">
+                    Simplification
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=timespeeddistance&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="time speed distance">
+                    Time, Speed & Distance
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=ratioproportion&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="ratio proportion">
+                    Ratio and Proportion
+                </div>
+            </a>
+            
+            <a href="taketest.html?topic=Average&test=Quantitative aptitude" class="topic-card">
+                <div class="topic-box" data-topic="algebra">
+                    Average
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <script src="navscript.js">
+        document.getElementById("searchBar").addEventListener("keyup", function() {
+            let filter = this.value.toLowerCase();
+            let topics = document.querySelectorAll(".topic-box");
+
+            topics.forEach(topic => {
+                let topicText = topic.getAttribute("data-topic").toLowerCase();
+                if (topicText.includes(filter)) {
+                    topic.parentElement.style.display = "block";
+                } else {
+                    topic.parentElement.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

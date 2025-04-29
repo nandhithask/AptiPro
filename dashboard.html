@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="navstyle.css">
+    <title>AptiPro Dashboard</title>
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a href="#" class="logo">
+                <i class="fas fa-brain"></i>
+                AptiPro
+            </a>
+            <div class="user-menu">
+                <span id="usernameDisplay" class="username"></span>
+                <div class="user-icon" onclick="toggleDropdown()">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="dropdown" id="dropdown">
+                    <a href="profile.html"><i class="fas fa-user-circle"></i> Profile</a>
+                    <a href="login.html" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <h1 class="page-title">Welcome to AptiPro!</h1>
+        <p class="subtitle">Your personalized aptitude test preparation platform</p>
+
+        <div class="card-grid">
+            <a href="quantitative.html" class="card">
+                <div class="card-header">
+                    <span>Quantitative Aptitude</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Test your math skills</span>
+                    <div class="card-icon">
+                        <i class="fas fa-calculator"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="card card-coming-soon">
+                <div class="card-badge">Coming Soon</div>
+                <div class="card-header">
+                    <span>Logical Reasoning</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Enhance logical thinking</span>
+                    <div class="card-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="card card-coming-soon">
+                <div class="card-badge">Coming Soon</div>
+                <div class="card-header">
+                    <span>Verbal Ability</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Improve language skills</span>
+                    <div class="card-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="card card-coming-soon">
+                <div class="card-badge">Coming Soon</div>
+                <div class="card-header">
+                    <span>Non-Verbal Reasoning</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Visual pattern recognition</span>
+                    <div class="card-icon">
+                        <i class="fas fa-shapes"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="card card-coming-soon">
+                <div class="card-badge">Coming Soon</div>
+                <div class="card-header">
+                    <span>Situational Judgment</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Decision making skills</span>
+                    <div class="card-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                </div>
+            </a>
+
+            <a href="#" class="card card-coming-soon">
+                <div class="card-badge">Coming Soon</div>
+                <div class="card-header">
+                    <span>All Rounder</span>
+                </div>
+                <div class="card-footer">
+                    <span class="card-footer-text">Complete skill assessment</span>
+                    <div class="card-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2025 AptiPro - All rights reserved
+    </footer>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Check authentication
+    const user = JSON.parse(localStorage.getItem('user'));
+    const token = localStorage.getItem('token');
+    
+    if (!user || !token) {
+        window.location.href = 'login.html';
+        return;
+    }
+    
+    // Display username
+    document.getElementById('usernameDisplay').textContent = user.username;
+
+    document.querySelectorAll('.card-coming-soon').forEach(card => {
+        card.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('This feature is coming soon!');
+        });
+    });
+
+    document.querySelector('.card:not(.card-coming-soon)').addEventListener('click', (e) => {
+        e.preventDefault();
+        sessionStorage.setItem('currentTest', 'quantitative');
+        window.location.href = 'quantitative.html';
+    });
+});
+
+
+function toggleDropdown() {
+    const dropdown = document.getElementById("dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+
+function logout() {
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    sessionStorage.clear();
+    window.location.href = "login.html";
+}
+
+document.addEventListener("click", function(event) {
+    const userIcon = document.querySelector(".user-icon");
+    const dropdown = document.getElementById("dropdown");
+    
+    if (!userIcon.contains(event.target) && event.target !== userIcon) {
+        dropdown.style.display = "none";
+    }
+});</script>
+</body>
+</html>

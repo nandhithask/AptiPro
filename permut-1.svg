@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450">
+  <!-- Definitions for first image (slightly darker shade of blue) -->
+  <defs>
+    <linearGradient id="headerGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="cardGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ffffff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f1f5f9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="formulaBg1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#93c5fd;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#bfdbfe;stop-opacity:1" />
+    </linearGradient>
+    <filter id="cardShadow" x="-2%" y="-2%" width="104%" height="108%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.15" flood-color="#000000"/>
+    </filter>
+    <pattern id="subtlePattern" width="100" height="100" patternUnits="userSpaceOnUse">
+      <rect width="100" height="100" fill="#f1f5f9"/>
+      <path d="M0 10L100 10M10 0L10 100M20 0L20 100M30 0L30 100M40 0L40 100M50 0L50 100M60 0L60 100M70 0L70 100M80 0L80 100M90 0L90 100M0 20L100 20M0 30L100 30M0 40L100 40M0 50L100 50M0 60L100 60M0 70L100 70M0 80L100 80M0 90L100 90" stroke="#e2e8f0" stroke-width="0.5" />
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1000" height="450" fill="url(#subtlePattern)" />
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="1000" height="85" fill="url(#headerGradient1)" />
+  <text x="50" y="55" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#ffffff">Basic Permutation &amp; Combination Formulas</text>
+  <text x="50" y="80" font-family="Arial, sans-serif" font-size="16" font-style="italic" fill="#bfdbfe">Core concepts and fundamental formulas</text>
+  
+  <!-- Main Card -->
+  <rect x="30" y="105" width="940" height="325" rx="12" fill="url(#cardGradient)" stroke="#cbd5e1" stroke-width="1" filter="url(#cardShadow)" />
+
+  <!-- Formula 1 -->
+  <circle cx="60" cy="150" r="15" fill="#3b82f6" />
+  <text x="60" y="155" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">1</text>
+  <rect x="90" y="125" width="840" height="50" rx="8" fill="url(#formulaBg1)" />
+  <text x="110" y="155" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e40af">Factorial: n! = n × (n-1) × (n-2) × ... × 1</text>
+  <text x="110" y="175" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#3b82f6">(Note: 0! = 1)</text>
+
+  <!-- Formula 2 -->
+  <circle cx="60" cy="210" r="15" fill="#3b82f6" />
+  <text x="60" y="215" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">2</text>
+  <rect x="90" y="185" width="840" height="50" rx="8" fill="url(#formulaBg1)" />
+  <text x="110" y="215" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e40af">Permutation (Arrangement): P(n, r) = n! / (n - r)!</text>
+  <text x="590" y="215" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#3b82f6">(Order matters)</text>
+
+  <!-- Formula 3 -->
+  <circle cx="60" cy="270" r="15" fill="#3b82f6" />
+  <text x="60" y="275" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">3</text>
+  <rect x="90" y="245" width="840" height="50" rx="8" fill="url(#formulaBg1)" />
+  <text x="110" y="275" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e40af">Combination (Selection): C(n, r) = n! / [r! × (n - r)!]</text>
+  <text x="650" y="275" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#3b82f6">(Order doesn't matter)</text>
+
+  <!-- Formula 4 -->
+  <circle cx="60" cy="330" r="15" fill="#3b82f6" />
+  <text x="60" y="335" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle">4</text>
+  <rect x="90" y="305" width="840" height="50" rx="8" fill="url(#formulaBg1)" />
+  <text x="110" y="335" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e40af">Relation between P and C: P(n, r) = C(n, r) × r!</text>
+  
+  <!-- Decorative Geometric Elements -->
+  <circle cx="950" cy="30" r="12" fill="#ffffff" opacity="0.3" />
+  <circle cx="920" cy="45" r="8" fill="#ffffff" opacity="0.3" />
+  <circle cx="935" cy="20" r="5" fill="#ffffff" opacity="0.3" />
+  
+  <!-- Bottom Design Element -->
+  <path d="M30,430 C200,410 400,440 600,420 S800,430 970,420" stroke="#60a5fa" stroke-width="2" fill="none" />
+</svg>
